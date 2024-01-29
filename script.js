@@ -10,8 +10,14 @@ function getComputerChoice(){
         botChoice = "Scissors";
     }
 
-    console.log(randomPick);
-    console.log(botChoice);
     return botChoice;
 }
 
+function playerSelection(){
+    let playerChoice = prompt("Pick Rock, Papper, Scissors: ");
+    return playerChoice;
+}
+
+
+playerSelection();
+getComputerChoice();
