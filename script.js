@@ -65,9 +65,9 @@ playGame();
 playGame();
 
 if (playerScore == 3 || playerScore > compScore){
-    console.log("You won!");
+    console.log("You win!");
 } else if (compScore == 3 || compScore > playerScore){
-    console.log("Computer won!");
+    console.log("Computer win!");
 } else if (playerScore == compScore){
     console.log("Its a tie!")
 }
