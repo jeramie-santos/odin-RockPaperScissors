@@ -13,10 +13,6 @@ function getComputerChoice(){
     return botChoice;
 }
 
-function playerSelection(){
-    let playerChoice = prompt("Pick (Rock, Paper, Scissors) ");
-    return playerChoice;
-}
 
 function playRound(playerSelection,computerSelection){
     
@@ -24,27 +20,62 @@ function playRound(playerSelection,computerSelection){
     let compLower = computerSelection.toLowerCase();
 
     if (playerLower == compLower){
-            return ("Draw! you both pick " + computerSelection);
+            return "Draw! you both pick " + computerSelection + ".\nYou: " + playerScore + " Computer: " + compScore;
     } else if (playerLower == "rock" && compLower == "scissors") {
-            return "You Win! Rock beats " + computerSelection;
+            playerScore += 1;
+            return "You Win! Rock beats " + computerSelection + ".\nYou: " + playerScore + " Computer: " + compScore;
     } else if (playerLower == "paper" && compLower == "rock") {
-            return "You Win! Paper beats " + computerSelection;
+            playerScore += 1;
+            return "You Win! Paper beats " + computerSelection + ".\nYou: " + playerScore + " Computer: " + compScore;
     } else if (playerLower == "scissors" && compLower == "paper") {
-            return "You Win! Scissors beats " + computerSelection;
+            playerScore += 1;
+            return "You Win! Scissors beats " + computerSelection + ".\nYou: " + playerScore + " Computer: " + compScore;
     }  else if (playerLower == "rock" && compLower == "paper"){
-            return "You Lose! " + computerSelection + " beats Rocks";
+            compScore += 1;
+            return "You Lose! " + computerSelection + " beats Rocks.\nYou: " + playerScore + " Computer: " + compScore;
     }  else if (playerLower == "paper" && compLower == "scissors"){
-            return "You Lose! " + computerSelection + " beats Paper";
+            compScore += 1;
+            return "You Lose! " + computerSelection + " beats Paper.\nYou: " + playerScore + " Computer: " + compScore;
     }  else if (playerLower == "scissors" && compLower == "rock"){
-            return "You Lose! " + computerSelection + " beats Scissors";
+            compScore += 1;
+            return "You Lose! " + computerSelection + " beats Scissors.\nYou: " + playerScore + " Computer: " + compScore;
     } else {
             return "Invalid input!";
     }
+
+    
+
+
+
 }
 
-     
+let playerScore = 0;
+let compScore = 0;
 
-const player = playerSelection();
-const computer = getComputerChoice();
+function playGame(){
+    const player = prompt("Pick (Rock, Paper, Scissors)");
+    const computer = getComputerChoice();
+    console.log(playRound(player, computer));
+}
 
-console.log(playRound(player, computer));
+playGame();
+playGame();
+playGame();
+playGame();
+playGame();
+
+if (playerScore == 3 || playerScore > compScore){
+    console.log("You won!");
+} else if (compScore == 3 || compScore > playerScore){
+    console.log("Computer won!");
+} else if (playerScore == compScore){
+    console.log("Its a tie!")
+}
+
+
+
+
+
+
+
+
