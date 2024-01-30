@@ -73,11 +73,11 @@ for (let i = 1; i <= 5; i ++){
 
 
 
-if (playerScore == 3 || playerScore > compScore){
+if (playerScore == 3 || playerScore > computerScore){
     console.log("You win!");
-} else if (compScore == 3 || compScore > playerScore){
+} else if (computerScore == 3 || computerScore > playerScore){
     console.log("Computer win!");
-} else if (playerScore == compScore){
+} else if (playerScore == computerScore){
     console.log("Its a tie!")
 }
 
