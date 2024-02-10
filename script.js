@@ -6,6 +6,9 @@ let btnPaper = document.querySelector('#paper');
 let btnScissors = document.querySelector('#scissors');
 let result = document.querySelector('#result');
 let match = document.querySelector('#matchWinner');
+let playerDisplay = document.querySelector('#player');
+let buttons = document.querySelector('.buttons');
+let computerDisplay = document.querySelector('#computer');
 
 
 function getComputerChoice(){
@@ -29,49 +32,44 @@ function playRound(playerSelection,computerSelection){
     let computerLower = computerSelection.toLowerCase();
 
     if (playerLower == computerLower){
-       result.textContent = "Draw! you both pick " + computerSelection 
-        + ".\nYou: " + playerScore + " Computer: " + computerScore;
+        result.textContent = "Draw! you both pick " + computerSelection;
     } else if (playerLower == "rock" && computerLower == "scissors") {
         playerScore += 1;
-       result.textContent = "You Win! Rock beats " + computerSelection + ".\nYou: " 
-        + playerScore + " Computer: " + computerScore;
+        playerDisplay.textContent = playerScore;
+        result.textContent = "Rock beats " + computerSelection + "";
     } else if (playerLower == "paper" && computerLower == "rock") {
         playerScore += 1;
-       result.textContent = "You Win! Paper beats " + computerSelection + ".\nYou: " 
-        + playerScore + " Computer: " + computerScore;
+        playerDisplay.textContent = playerScore;
+        result.textContent = "Paper beats " + computerSelection + "";
     } else if (playerLower == "scissors" && computerLower == "paper") {
         playerScore += 1;
-       result.textContent = "You Win! Scissors beats " + computerSelection + ".\nYou: " 
-        + playerScore + " Computer: " + computerScore;
+        playerDisplay.textContent = playerScore;
+        result.textContent = "Scissors beats " + computerSelection + "";
     }  else if (playerLower == "rock" && computerLower == "paper"){
         computerScore += 1;
-       result.textContent = "You Lose! " + computerSelection + " beats Rocks.\nYou: " 
-        + playerScore + " Computer: " + computerScore;
+        computerDisplay.textContent = computerScore;
+        result.textContent = computerSelection + " beats Rocks";
     }  else if (playerLower == "paper" && computerLower == "scissors"){
         computerScore += 1;
-       result.textContent = "You Lose! " + computerSelection + " beats Paper.\nYou: " 
-        + playerScore + " Computer: " + computerScore;
+        computerDisplay.textContent = computerScore;
+        result.textContent = computerSelection + " beats Paper";
     }  else if (playerLower == "scissors" && computerLower == "rock"){
         computerScore += 1;
-       result.textContent = "You Lose! " + computerSelection + " beats Scissors.\nYou: " 
-        + playerScore + " Computer: " + computerScore;
+        computerDisplay.textContent = computerScore;
+        result.textContent = computerSelection + " beats Scissors";
     } else {
-       result.textContent = "Invalid input!";
+        result.textContent = "Invalid input!";
     }
 
     if (playerScore == 5){
         console.log("You Win!");
         match.textContent = "You win!";
-        btnRock.setAttribute('disabled', '');
-        btnPaper.setAttribute('disabled', '');
-        btnScissors.setAttribute('disabled', '');
+        buttons.style.cssText = "display: none";
         result.style.cssText = "display: none";
     } else if (computerScore == 5){
         console.log("computer win");
         match.textContent = "Computer win!";
-        btnRock.setAttribute('disabled', '');
-        btnPaper.setAttribute('disabled', '');
-        btnScissors.setAttribute('disabled', '');
+        buttons.style.cssText = "display: none";
         result.style.cssText = "display: none";
     } else if (playerScore == 0 && computerScore == 0){
         match.textContent == "";
