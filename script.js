@@ -1,6 +1,25 @@
 let playerScore = 0;
 let computerScore = 0;
 
+let btnRock = document.querySelector('#rock');
+let btnPaper = document.querySelector('#paper');
+let btnScissors = document.querySelector('#scissors');
+let result = document.querySelector('#result');
+
+
+btnRock.addEventListener('click', function(){
+    console.log("Rock");
+});
+
+btnPaper.addEventListener('click', function(){
+    console.log("Paper");
+});
+
+btnScissors.addEventListener('click', function(){
+    console.log("Scissors");
+});
+
+
 function getComputerChoice(){
     let randomChoice = Math.floor((Math.random() * 3) + 1);
     let computerChoice;
@@ -15,10 +34,6 @@ function getComputerChoice(){
 
     return computerChoice;
 }
-
-
-
-
 
 
 function playGame(){
@@ -61,24 +76,27 @@ function playGame(){
     
     }
 
-    const player = prompt("Choose (Rock, Paper, Scissors)");
+    // const player = prompt("Choose (Rock, Paper, Scissors)");
     const computer = getComputerChoice();
-    console.log(playRound(player, computer));
+    // console.log(playRound(player, computer));
   
 }
 
-for (let i = 1; i <= 5; i ++){
-    playGame();
-}
 
+
+// for (let i = 1; i <= 5; i ++){
+//     playGame();
+// }
+
+playGame();
 
 
 if (playerScore == 3 || playerScore > computerScore){
-    console.log("You win!");
+    result.textContent = "You win!";
 } else if (computerScore == 3 || computerScore > playerScore){
-    console.log("Computer win!");
+    result.textContent = "Computer win!";
 } else if (playerScore == computerScore){
-    console.log("Its a tie!")
+    result.textContent = "Its a tie!";
 }
 
 
