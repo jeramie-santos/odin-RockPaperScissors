@@ -14,22 +14,24 @@
     <main>
         <div class="match">
             <p id="result">Please pick from the buttons below</p>
-            <p id="matchWinner"></p>
         </div>    
-        <div class="score">
-            <div class="board player">
+        <div class="scoreBoard">
+            <div class="board">
                 <p>Player</p>
-                <p id="player">0</p>
+                <p id="playerDisplay">0</p>
             </div>
-            <div class="board computer">
+            <div class="board">
                 <p>Computer</p>
-                <p id="computer">0</p>
+                <p id="computerDisplay">0</p>
             </div>
         </div>
         <div class="buttons">
             <button id="rock">Rock</button>
             <button id="paper">Paper</button>
             <button id="scissors">Scissors</button>
+        </div>
+        <div class="playAgain">
+            <button onclick="window.location.reload();">Play Again</button>
         </div>
     </main>
 </body>

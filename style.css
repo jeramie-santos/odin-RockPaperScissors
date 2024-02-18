@@ -2,7 +2,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* border: 1px solid red; */
 }
 
 html {
@@ -34,7 +33,7 @@ main {
     font-size: 2rem;
 }
 
-.score {
+.scoreBoard {
     display: flex;
     gap: 20rem;
     font-size: 3rem;
@@ -42,13 +41,12 @@ main {
 }
 
 .board {
-    /* background-color: aqua; */
     width: 20rem;
 }
 
 
-#player,
-#computer {
+#playerDisplay,
+#computerDisplay {
     font-size: 10rem;
 }
 
@@ -69,4 +67,8 @@ button {
 button:hover{
     background-color: white;
     color: black;
+}
+
+.playAgain {
+    display: none;
 }
